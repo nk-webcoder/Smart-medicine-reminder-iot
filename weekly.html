@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Weekly Report</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script src="firebase.js"></script>
+
+</head>
+
+<body>
+
+<div class="header">
+Weekly Medicine Report
+</div>
+
+<div class="card">
+
+<h2>This Week Status</h2>
+
+<div id="report"></div>
+
+</div>
+
+<script>
+
+function loadWeeklyReport(){
+
+let today = new Date();
+let last7Days = [];
+
+for(let i=0;i<7;i++){
+
+let d = new Date();
+d.setDate(today.getDate()-i);
+
+let formatted = d.toISOString().split('T')[0];
+
+last7Days.push(formatted);
+
+}
+
+db.ref("medicine").once("value",function(snapshot){
+
+let data = snapshot.val();
+
+let html="";
+
+for(let id in data){
+
+let med = data[id];
+
+if(last7Days.includes(med.date)){
+
+html += "<p>"+med.name+" ("+med.date+") - "
++ (med.taken ? "✅ Taken" : "❌ Missed") + "</p>";
+
+}
+
+}
+
+document.getElementById("report").innerHTML = html;
+
+});
+
+}
+
+loadWeeklyReport();
+
+</script>
+
+</body>
+
+</html>

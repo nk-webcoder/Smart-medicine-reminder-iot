@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Caregiver</title>
+
+<link rel="stylesheet" href="style.css">
+
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
+
+<script src="firebase.js"></script>
+<script src="script.js"></script>
+
+</head>
+
+<body>
+
+<div class="header">Caregiver Dashboard</div>
+
+<div class="card">
+
+<h3>Patient Status</h3>
+
+<div id="status"></div>
+
+<button onclick="openReport()">Weekly Report</button>
+
+</div>
+
+<div class="nav">
+  <a href="home.html">Home</a>
+  <a href="schedule.html">Schedule</a>
+  <a href="alert.html">Alerts</a>
+  <a href="caregiver.html">Caregiver</a>
+</div>
+
+<script>
+function openReport(){
+window.location.href="weekly.html";
+}
+</script>
+
+</body>
+</html>
