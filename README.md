@@ -1,3 +1,4 @@
+
 # Smart Medicine Reminder and Tracking System
 
 An end-to-end IoT-based healthcare solution engineered to bridge the gap between physical medical adherence and cloud-based digital tracking. This system features a physical hardware prototype that alerts users when it is time to take specific medications while concurrently synchronizing device states with a secure cloud infrastructure for real-time remote monitoring via a full-stack web dashboard.
@@ -72,3 +73,7 @@ Developed a robust understanding of hardware-to-software system integration.
 Eliminated server-side maintenance overhead by deploying a serverless data synchronization layer.
 
 Designed an intuitive healthcare utility aimed at empowering elderly care networks and boosting therapeutic transparency.
+=======
+# Smart-medicine-reminder-iot
+An Iot based health tech solution system
+c87ba8c95d72d516a2dafe60acd50fa8f9a94d56
